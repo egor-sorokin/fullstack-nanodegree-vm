@@ -3,7 +3,12 @@
 
 </head>
 <body>
-<h1>Delete</h1>
+<h1>Are you sure you want to delete {{i.name}}</h1>
+<form action="{{ url_for('delete_menu_item', restaurant_id=i.restaurant_id, item_id=i.id) }}" method="post">
+    <input type="submit" value="Delete">
+</form>
+
+<a href="{{ url_for('restaurant_menu', restaurant_id=i.restaurant_id) }}">Cancel</a>
 
 </body>
 </html>
