@@ -1,17 +1,16 @@
-<html>
-<head>
+{% extends 'base.html' %}
 
-</head>
-<body>
-<h1>New Menu Item</h1>
+{% block content %}
 
-<form method="post" action="{{ url_for('new_menu_item', restaurant_id=restaurant_id) }}">
+<h1 class="title">New Menu Item</h1>
+<form method="post" action="{{ url_for('new_menu_item', restaurant_id=restaurant_id) }}" class="form">
     <label for="newItemName">Enter name:
         <input type="text" id="newItemName" name="name">
     </label>
 
-    <input type="submit" value="create">
+    <input type="submit" value="Create" class="button">
 </form>
 
-</body>
-</html>
+<a href="{{ url_for('restaurant_menu', restaurant_id = restaurant_id)}}" class="link">Cancel</a>
+
+{% endblock %}
